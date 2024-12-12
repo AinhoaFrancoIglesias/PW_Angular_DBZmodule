@@ -1,5 +1,12 @@
 <p>list works!</p>
 <h4>Listado</h4>
+
+<!--
+    · <ul class="list-group> significa que va a ser una lista  con un diseño determinado".
+    · el *ngFor del <li> hace que para cada elemento de characterList (para cada charcter creado) ponga un numerito en la lista
+    · let i=index le da el numero a los elementos segun el indice (i++ del ngFor).
+    · isFirst (primero), isLast (ultimo), isEven (par), isOdd (impar), para añadirles luego estilos en el [ngClass] de abajo.
+-->
 <ul class="list-group">
   <li *ngFor="
   let character of characterList;
@@ -16,6 +23,12 @@
     'list-group-item-primary': isEven
   }">
 
+
+  <!--
+    · div para mostrar los datos de cada character.
+    · i+1 para que el numero del li empiece en 1 en vez de 0.
+    · muestra el nombre y el poder del personaje con el {{character.___}}
+  -->
   <div>
     <span class="text-primary">{{i+1}}</span>
     <span>{{ character.name}} - </span>
@@ -23,6 +36,9 @@
     <span>{{character.power}}</span>
   </div>
 
+  <!--
+    · botón para borrear los personajes, cuando lo pulsas pone en marcha el metodo onDeteteCharacter() con el indice del personaje que corresponda
+  -->
   <button class="btn btn-danger" (click)="onDeteteCharacter(i)" >X</button>
 
   </li>

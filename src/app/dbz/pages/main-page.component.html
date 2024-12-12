@@ -1,21 +1,21 @@
 <h1>DBZ Personajes</h1>
 <hr>
 
+<!-- 
+  · Crea un div para mostrar la lista de personajes.
+  · Crea filas y columnas con el class= row y col.
+  · llama al hijo (dbz-list) y enlaza la lista de personajes del padre (characters) con la suya (characterList)
+  · escucha el evento ondelete emitido por el hijo y llama al metodo ondeletecharacter para mostrar el botno de eliminar con su funcionalidad
+-->
 <div class="row">
-  <div class="col">
+  <div class="col"> <!--primera columna para la lista-->
     <!-- onDelete-->
     <dbz-list [characterList]="characters"
     (onDelete)="onDeleteCharacter($event)"></dbz-list>
-
-
-
   </div>
 
-  <div class="col">
-
+  <!--llama al hijo addcharacter y escucha el evento onnewcharacter, llamando al metodo onnewcharacter($event) para crear y añadir a la lista al nuevo character -->
+  <div class="col"> <!--segunda columna para añadir personajes-->
     <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
-
-
-
   </div>
 </div>

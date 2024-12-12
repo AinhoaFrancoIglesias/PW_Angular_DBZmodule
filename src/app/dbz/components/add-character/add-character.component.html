@@ -1,5 +1,12 @@
 <p>add-character works!</p>
 <h4>Agregar personaje</h4>
+
+    <!--
+      · La etiqueta <form> crea un formulario, y ponerle class="row" hace que vaya a estar organizado por filas.
+      · El (ngSubmit)="emitCharacter() hace que, cuando se pulse enviar en el formulario, ejecute el metodo emitCharacter".
+      · [(ngModel)]="character.name" junta (binding) el valor del textfield  con el nombre del objeto character.
+      · placeholder="Nombre" hace que el placeholder (el textito en gris que aparece en el textfield que se quita al escribir) sea "nombre".
+    -->
     <form class="row" (ngSubmit)="emitCharacter()">
       <input type="text"
       [(ngModel)]="character.name"
@@ -7,12 +14,22 @@
       class="form-control mb-2"
       placeholder="Nombre">
 
+      <!--
+        · type="number" lo que hace es indicar que el tipo del input que se va a escribir es un campo numerico, para que no coja otro tipo de caracteres.
+        · [(ngModel)]="character.power" hace lo mismo que el de arriba para el nombre, pero para el poder.
+        · placeholder="poder" lo mismo que el de arriba de nombre
+      -->
       <input type="number"
       [(ngModel)]="character.power"
       name="power"
       class="form-control mb-2"
-      placeholder="placeholder">
+      placeholder="poder">
 
+
+      <!--
+        · type="submit" hace que el boton sea el de enviar, que activara el evento ngSubmit configurado en <form> de arriba.
+        · (click)="emitCharacter()" ejecuta el método emitCharacter() cuando le das al boton
+      -->
       <button type="submit" class="btn btn-primary" (click)="emitCharacter()">
       Agregar
     </button>

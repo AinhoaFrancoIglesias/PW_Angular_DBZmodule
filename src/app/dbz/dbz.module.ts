@@ -6,16 +6,13 @@ import { MainPageComponent } from './pages/main-page.component';
 import { ListComponent } from './components/list/list.component';
 import { AddCharacterComponent } from './components/add-character/add-character.component';
 
-
-
-
 @NgModule({
-  declarations: [
+  declarations: [ //añadimos los componentes de list y añadir, adeamas del main page
     MainPageComponent,
     ListComponent,
-    AddCharacterComponent
+    AddCharacterComponent 
   ],
-  exports: [
+  exports: [ //exxportamos para mostrar en le pagina web el mainpage
     MainPageComponent,
   ],
   imports: [
