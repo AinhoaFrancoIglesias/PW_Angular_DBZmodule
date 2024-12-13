@@ -10,12 +10,12 @@
 <div class="row">
   <div class="col"> <!--primera columna para la lista-->
     <!-- onDelete-->
-    <dbz-list [characterList]="characters"
-    (onDelete)="onDeleteCharacter($event)"></dbz-list>
+    <dbz-list [characterList]="dbzService.characters"
+    (onDelete)="dbzService.onDeleteCharacter($event)"></dbz-list>
   </div>
 
   <!--llama al hijo addcharacter y escucha el evento onnewcharacter, llamando al metodo onnewcharacter($event) para crear y añadir a la lista al nuevo character -->
   <div class="col"> <!--segunda columna para añadir personajes-->
-    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+    <dbz-add-character (onNewCharacter)="dbzService.onNewCharacter($event)"></dbz-add-character>
   </div>
 </div>
